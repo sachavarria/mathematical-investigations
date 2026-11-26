@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where the count lives</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#111820;color:#f5f0e3;font:16px/1.55 system-ui,sans-serif}main{max-width:850px;margin:auto;padding:clamp(18px,5vw,55px)}h1{font:normal clamp(40px,7vw,72px)/1.05 Georgia,serif;margin:.25em 0}h2{font:normal 23px Georgia,serif}label{display:block;margin:1em 0 .3em}input,button{font:inherit;color:inherit;background:#202b35;border:1px solid #72818b;border-radius:5px;padding:.5em .7em}input[type=range]{padding:0;width:min(100%,340px);vertical-align:middle;accent-color:#8bdfcb}input[type=text]{width:min(100%,225px);font:20px monospace}button{cursor:pointer;margin:.3em .25em .3em 0}button:focus-visible,input:focus-visible{outline:3px solid #f2bb70}button:hover{background:#324150}.band{height:25px;background:#303c47;display:flex;margin:.4em 0 .9em}.band i{display:block}.stored{background:#8bdfcb}.scanned{background:repeating-linear-gradient(135deg,#ecae6a 0 3px,#745331 3px 6px)}.small{color:#c0cbd2;font-size:.91em}section{border-top:1px solid #53606b;margin-top:1.4em}output{color:#a9ebd9}#answer{font:normal 27px Georgia,serif}dl{display:grid;grid-template-columns:1fr auto;gap:.3em 1em}dd{font-variant-numeric:tabular-nums;margin:0}p{max-width:70ch}
+</style><main><h1>Where the count lives</h1><p>Read one Grandmama clock through a sparse or dense index. The word stays yours to choose. Move the slider to decide how much counting happens before you ask for its position.</p>
+<label for="word">Binary word · 2 to 14 bits</label><input id="word" type="text" value="00010111" autocapitalize="off" spellcheck="false">
+<label for="depth">Bits used to address the index · <output id="k"></output></label><input id="depth" type="range" min="0" max="8" value="4">
+<div><button id="run">Compute position</button><button id="clear">Discard index</button></div>
+<p id="message" role="status"></p>
+<section><h2>Where the work happened</h2><p class="small">Both strips start at zero. Green is the part covered by a stored count. Hatching marks the part examined for this query. The unfilled remainder follows the query.</p>
+<div>Candidate words in colex order</div><div class="band" id="keys"></div>
+<div>Bits emitted into the clock</div><div class="band" id="bits"></div>
+<p id="answer" aria-live="polite"></p></section>
+<section><h2>Operation ledger</h2><dl id="ledger"></dl><p class="small">One candidate test checks rotations and assigns a period or zero. Counts measure calls, not elapsed time. Storage counts the index array payload. A repeated query of the same size and index depth reuses the array. Drawing the strips uses only the two partial counts returned by the query.</p></section></main>
+<script>
+const el=id=>document.getElementById(id);
+let cache=null;
+function weight(w){
+  let period=w.length;
+  for(let j=1;j<w.length;j++){
+    const r=w.slice(j)+w.slice(0,j);
+    if(r<w)return 0;
+    if(r===w && period===w.length)period=j;
+  }
+  return period;
+}
+function candidate(key,n){return key.toString(2).padStart(n,'0').split('').reverse().join('')}
+function prepare(n,k){
+  const size=2**n, width=2**(n-k);
+  const table=k ? new Uint32Array(2**k) : null;
+  let total=0;
+  if(table)for(let j=0;j<size;j++){
+    if(j%width===0)table[j/width]=total;
+    total+=weight(candidate(j,n));
+  }
+  return {n,k,width,table,build:table?size:0,queries:0,scans:0};
+}
+function query(index,w){
+  const key=parseInt([...w].reverse().join(''),2);
+  const start=key-key%index.width;
+  const saved=index.table?index.table[start/index.width]:0;
+  let extra=0;
+  for(let j=start;j<key;j++)extra+=weight(candidate(j,w.length));
+  index.queries++; index.scans+=key-start;
+  return {key,start,saved,extra};
+}
+function band(id,first,second,N){
+  el(id).replaceChildren();
+  for(const [value,kind] of [[first,'stored'],[second,'scanned']]){
+    const bar=document.createElement('i');bar.className=kind;bar.style.width=(100*value/N)+'%';el(id).append(bar);
+  }
+  el(id).setAttribute('aria-label',first+' stored, '+second+' examined, out of '+N);
+}
+function draw(){
+  const w=el('word').value.trim(),n=w.length;
+  if(!/^[01]{2,14}$/.test(w)){el('message').textContent='Enter 2 through 14 binary digits.';return}
+  el('depth').max=n;
+  const k=Number(el('depth').value);el('k').textContent=k;
+  const fresh=!cache||cache.n!==n||cache.k!==k;
+  if(fresh)cache=prepare(n,k);
+  const r=query(cache,w), tests=r.key-r.start, N=2**n;
+  band('keys',r.start,tests,N);band('bits',r.saved,r.extra,N);
+  const period=weight(w);
+  el('answer').textContent=(period===n?'Certified boundary at tick ':period?'Short block begins at tick ':'Insertion weight ')+(r.saved+r.extra)+' = '+r.saved+' stored + '+r.extra+' counted';
+  el('message').textContent=period===n?'This window certifies a full-length boundary.':period?'This representative emits a shorter block. Its block start need not display this word.':'This word is not a necklace representative. The count gives its insertion weight, not its temporal position.';
+  const items=[['Build tests this query',fresh?cache.build:0],['Index payload in bytes',cache.table?.byteLength??0],['Query table reads',k?1:0],['Residual candidate tests',tests],['Word classification tests',1],['Queries since index build',cache.queries],['Build + residual tests across those queries',cache.build+cache.scans]];
+  el('ledger').replaceChildren();for(const [name,value] of items){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=name;dd.textContent=value;el('ledger').append(dt,dd)}
+}
+el('run').onclick=draw;el('word').onkeydown=e=>{if(e.key==='Enter')draw()};
+el('depth').oninput=()=>{el('k').textContent=el('depth').value};el('depth').onchange=draw;
+el('clear').onclick=()=>{cache=null;el('ledger').replaceChildren();el('keys').replaceChildren();el('bits').replaceChildren();el('answer').textContent='';el('message').textContent='Index discarded. Compute again to measure a fresh build.'};draw();
+</script></html>
