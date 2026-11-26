@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\title{Counting temporal records with a fixed number of missing windows}
+\author{Research experiment commissioned by S.A. Chavarría}
+\date{25 November 2026}
+\begin{document}
+\maketitle
+\begin{center}\small Candidate original mathematical contribution pending independent verification\\ and confirmation of publication priority.\end{center}
+\begin{abstract}
+For a labelled alphabet of size \(q\), we consider cyclic records of length \(q^n-d\) whose window multiplicities take the nearest integers to their mean at every scale. At fixed deficit \(d\), the proposed enumeration reduces to determinants of order \(d\), indexed by permutations of short contexts. The ratio to the full de Bruijn count converges to a weighted cycle sum. Its finite corrections are polynomials in \(q^{-(n-1)}\) on residue classes. When \(d\le q\), the limiting ratio admits a product formula.
+\end{abstract}
+\section{Records and partial observation}
+Identify cyclic rotations and keep the symbols labelled. A record of length \(L\) is balanced if every word of length \(1\le m\le L\) has circular multiplicity in
+\(\{\lfloor L/q^m\rfloor,\lceil L/q^m\rceil\}\), following Nellore and Ward~\cite{nw}.
+For a uniform initial phase the multiplicity of the observed window equals the number of possible phases. At \(L=q^n-d\) write \(B(q,n,d)\) for the balanced count and \(D(q,n)=(q!)^{q^{n-1}}/q^n\) for the full count. This addresses a fixed-deficit regime of the balanced cut-down enumeration problem~\cite{catalogue}.
+\section{Exact enumeration}
+Fix \(q\ge2,d\ge1\), put \(r=\max(1,\lceil\log_q d\rceil)\), \(k=n-1\), and assume \(k\ge r\). Take a set \(U\) of \(d\) distinct \(r\)-words whose length-\(m\) prefix counts are balanced about \(d/q^m\) for \(1\le m<r\). Take any permutation \(s\) of \(U\) for which the length-\((r-1)\) suffix of \(u\) is the corresponding prefix of \(s(u)\). Let \(S_{u,w}=[w=s(u)]\). Reading first symbols along the orbit starting at \(u\) gives a periodic stream. Denote its first \(k\) symbols by \(v_u\). With prefix and suffix operators of length \(h\), set
+\[
+ G_{u,w}=\sum_{t=0}^{k-1}q^{-t-1}
+ [\operatorname{suf}_{k-t}(v_u)=\operatorname{pre}_{k-t}(v_w)].
+\]
+\begin{theorem}
+With the sum taken over the admissible pairs just defined,
+\begin{align}
+ B(q,n,d)/D(q,n)&=(q-1)^{-d}\sum_{(U,s)}\det(I-(I-S)G),\label{exact}\\
+ \lim_{n\to\infty} B(q,n,d)/D(q,n)
+ &=\sum_{(U,s)}\prod_{C\text{ cycle of }s}(q^{|C|}-1)^{-1}.\label{limit}
+\end{align}
+On every residue class of \(k\) modulo \(\operatorname{lcm}(1,\ldots,d)\), the exact ratio is a rational-coefficient polynomial in \(q^{-k}\) of degree at most \(d-1\).
+\end{theorem}
+\begin{proof}
+Use \(k\)-words as vertices and \(n\)-words as directed edges from prefix to suffix. A record with distinct \(n\)-windows takes each surviving edge once. Its omitted edges conserve flow. For \(m\le n\), subtract omitted prefix counts from \(q^{n-m}\) to recover surviving multiplicities. This subtraction exchanges the two rounding endpoints. At scale \(r\), the omitted prefixes must be distinct because \(d\le q^r\). This gives balance at all larger scales up to \(n\); uniqueness of surviving \(n\)-windows gives balance above \(n\).
+
+Consequently the omitted edges start at distinct \(k\)-vertices. Conservation makes their ends a permutation of their starts. Their first \(r\) symbols distinguish the vertices. Projection gives \((U,s)\); conversely successive overlaps recover the omitted \(n\)-words by reading first letters around each orbit. Possible balanced deletions are thus classified, including deletions whose complements are disconnected.
+
+Put \(M=q^k\). Write \(P\) for the full uniform shift transition, \(A=q(I-P)\) for its Laplacian, and \(J=\mathbf1\mathbf1^\top/M\). The directed matrix-tree theorem gives the common rooted tree count \(\det(A+J)/M\) since row and column sums vanish. The same expression for the residual graph gives zero on disconnection. By the BEST theorem, fixing the first edge gives the tree count times the product of \((\deg^+(v)-1)!\); that edge occurs exactly once, accounting for rotations. Each affected vertex loses one edge and retains positive degree. The factorial ratio is \((q-1)^{-d}\). Since \(P^k=J\), \(P\) is nilpotent on the sum-zero subspace and the resulting full tour count is \(D(q,n)\).
+
+Let \(E\) be the coordinate-column embedding at the affected vertices. The residual Laplacian is \(A-E(I-S)E^\top\). By the determinant lemma its tree-count ratio is
+\[
+ \det\bigl(I-(I-S)E^\top(A+J)^{-1}E\bigr).
+\]
+The inverse on sum-zero vectors equals \(q^{-1}\sum_{t=0}^{k-1}P^t\). On the entire space the difference is a scalar multiple of \(J\), which drops out under the compressed factor \(I-S\). For \(t<k\) the transition probability is \(q^{-t}\) exactly when the overlap in the definition of \(G\) matches, and zero otherwise. This proves \eqref{exact}.
+
+For overlaps of length at least \(r\), distinctness of the \(r\)-prefixes makes the match equivalent to \(w=s^t(u)\). Extending that rule to all \(t\ge0\) gives \(G_\infty=(qI-S)^{-1}\). Removing its tail subtracts \(q^{-k}S^kG_\infty\). For a shorter overlap \(h<r\), the correction tests the first \(h\) symbols from \(s^{k-h}(u)\) against those from \(w\), with prefactor \(q^{-k}q^{h-1}\). Hence \(G=G_\infty+q^{-k}H\), with \(H\) fixed on each residue class modulo the order of \(s\). This order divides the stated least common multiple. Multilinearity bounds the determinant degree by \(\operatorname{rank}(I-S)\), equal to \(d\) minus the number of cycles. Finally,
+\[
+ I-(I-S)G_\infty=(q-1)(qI-S)^{-1},
+ \qquad \det(qI-S)=\prod_C(q^{|C|}-1).
+\]
+Substitution cancels the factorial ratio and proves \eqref{limit}.
+\end{proof}
+\begin{corollary}
+For \(1\le d\le q\), writing \((q)_d=q(q-1)\cdots(q-d+1)\), the limit in \eqref{limit} is
+\[
+ \frac{(q)_d q^{d(d-1)/2}}{\prod_{i=1}^d(q^i-1)}.
+\]
+\end{corollary}
+\begin{proof}
+Every permutation on each \(d\)-symbol subset qualifies. By the permutation cycle index the limit equals \((q)_d[z^d]F(z)\) where
+\[
+ F(z)=\exp\left(\sum_{j\ge1}\frac{z^j}{j(q^j-1)}\right)
+     =\prod_{h\ge1}(1-z/q^h)^{-1}.
+\]
+The coefficient recurrence from \((1-z/q)F(z)=F(z/q)\) gives the formula.
+\end{proof}
+\section{Verification and priority}
+For \(q=n=d=3\) the count is \(148608\), the finite ratio \(43/108\), and the limit \(81/208\). The archived verifier checks 21 parameter triples using full graph cofactors, including nine direct word counts; five further triples beyond \(d\le q\) check the general kernel by word enumeration. A deletion may disconnect the graph. For \(q=n=d=2\), deleting the alternating two-cycle leaves two loops. Permuting individual letters also fails in general: for the necklace \(00011\), the missing length-three words are \(010,101,111\).
+
+The binary two-deletion precedent already uses the determinant lemma and exact mixing~\cite{chow}. The proposed generalizations are the short-context classification and the fixed-deficit limiting and polynomial laws. The search documented in the companion assessment leaves historical priority open. The proof has received internal review only. No proof-assistant certificate is available.
+\begin{thebibliography}{9}
+\bibitem{nw} A. Nellore and R. Ward. Arbitrary-Length Analogs to de Bruijn Sequences. CPM, 2022. \href{https://doi.org/10.4230/LIPIcs.CPM.2022.9}{doi:10.4230/LIPIcs.CPM.2022.9}.
+\bibitem{catalogue} De Bruijn Sequences and Universal Cycle Constructions. \href{https://debruijnsequence.org/db/db/db/problems}{Research problems}, item 8.
+\bibitem{chow} T. Chow, question, and jvvk, answer. \href{https://mathoverflow.net/questions/227666/}{Cycles of length \(2^n-2\) in the de Bruijn graph}. Includes discussion of Fredricksen's 1982 survey, section 2c.
+\end{thebibliography}
+\end{document}

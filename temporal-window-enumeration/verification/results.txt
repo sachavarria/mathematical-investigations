@@ -1,0 +1,26 @@
+2 2 1 2 graph+words
+2 2 2 1 graph+words
+2 3 1 4 graph+words
+2 3 2 3 graph+words
+2 4 1 32 graph+words
+2 4 2 20 graph+words
+3 2 1 36 graph+words
+3 2 2 24 graph+words
+3 2 3 8 graph+words
+3 3 1 559872 graph
+3 3 2 435456 graph
+3 3 3 148608 graph
+4 2 1 27648 graph
+4 2 2 20736 graph
+4 2 3 10368 graph
+4 2 4 2592 graph
+5 2 1 1244160000 graph
+5 2 2 995328000 graph
+5 2 3 597196800 graph
+5 2 4 238878720 graph
+5 2 5 47775744 graph
+2 3 3 2 general kernel+words
+2 3 4 1 general kernel+words
+2 4 3 12 general kernel+words
+2 4 4 9 general kernel+words
+2 4 5 6 general kernel+words

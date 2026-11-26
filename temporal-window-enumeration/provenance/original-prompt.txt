@@ -1,0 +1,56 @@
+Frontier Mathematical Research Experiment: Cryptographic Foundations
+
+Your objective is to produce an original, independently verifiable mathematical contribution to the foundations of cryptography within the computational resources available in this session.
+
+Prioritize the following interconnected domains:
+
+* Computational complexity and information recoverability
+* Reversible computation under partial observability
+* Mathematical foundations of one-way transformations
+* Information-theoretic security
+* Novel cryptographic constructions and formal security guarantees
+* Relationships between temporal inference and computational irreversibility
+
+Phase I: Autonomous problem selection
+
+Conduct a rigorous literature and novelty audit. Identify at least five genuinely unresolved, narrowly formulated mathematical problems for which meaningful progress might be achievable through conceptual reasoning rather than extensive computational search.
+
+Evaluate each candidate according to novelty, tractability, mathematical significance, available verification methods and its potential to reveal a more general mathematical principle.
+
+Select the strongest candidate independently and explain your decision.
+
+Phase II: Original mathematical investigation
+
+Develop your own conjectures, definitions, intermediate results and proof strategies.
+
+Investigate alternative mathematical representations of the problem. Examine whether changing its representation exposes structures that are difficult to recognize in its conventional formulation.
+
+Prioritize conceptual compression, structural insights and unexpected relationships between mathematical domains.
+
+Use computational experiments on synthetic systems where appropriate, particularly to discover counterexamples and test conjectures.
+
+Phase III: Adversarial verification
+
+Attempt to invalidate your own results.
+
+Identify hidden assumptions, boundary cases, counterexamples, unjustified generalizations and possible equivalences to existing theorems.
+
+Where feasible, produce a machine-checkable formalization in Lean 4.
+
+Phase IV: Research output
+
+Produce:
+
+1. A precise statement of the strongest original result.
+2. A complete proof or explicitly identified partial proof.
+3. Reproducible computational evidence, where relevant.
+4. A source register establishing the current state of the literature.
+5. An assessment of novelty and mathematical significance.
+6. A candid account of unresolved issues.
+7. The most promising subsequent research question.
+
+Conduct this investigation using abstract mathematics and synthetic experimental systems, without targeting deployed cryptographic infrastructure.
+
+A rigorous partial result is preferable to an unsupported claim of a major breakthrough. Do not manufacture novelty.
+
+Use your available reasoning resources as fully as possible. Treat the identification of a valuable research problem as itself part of the intellectual task.

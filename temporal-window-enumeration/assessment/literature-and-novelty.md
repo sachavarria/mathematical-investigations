@@ -1,0 +1,31 @@
+# Literature and novelty assessment
+
+Extracted from the original research note. Publication priority remains unconfirmed.
+
+
+
+The de Bruijn Sequence and Universal Cycle Constructions research-problems catalogue explicitly marks some neighbouring questions solved and lists the following without that designation. The catalogue provides evidence of open status. Search cannot rule out an unindexed or newly published solution. Complexity targets below make the decoding questions precise: polynomial time and space in n, for a fixed binary alphabet, with a canonical origin and without an exponentially precomputed table.
+
+| Candidate | Existing work and remaining target | Session tractability and verification | Significance and broader principle |
+|---|---|---|---|
+| Count all-scale balanced necklaces at lengths q^n−d for fixed deficit | Nellore–Ward construct them. Catalogue problem 8 asks their number. Binary d=2 has prior work. | High for a restricted family. Compare exhaustive necklaces, full graph cofactors and a smaller formula. | Counts optimally balanced temporal records. A local defect might encode the global object. |
+| Rank the binary Grandmama (PCR2) sequence from an n-bit window | Catalogue 10 lists PCR2 separately from solved PCR3. Efficient forward generation is known. | Medium. Test ranks against a canonical full cycle at small n. | Distinguishes identifiability of a phase from efficient inference of that phase. |
+| Unrank the binary PCR4 sequence from a phase index | Catalogue 10. Concatenation construction is marked solved under problem 4. Efficient random access remains listed. | Medium. Try subtree sizes of the necklace ordering, verify every index against generation. | Would connect local generation with global access. |
+| Rank the binary prefer-same cycle | Catalogue 10; Sala, Sawada and Alhakim give an efficient successor rule. | Medium–low. Run-length classes suggest a representation. Test all windows against direct traversal. | Can temporal persistence be exploited for synchronization? |
+| Find a simple local successor rule for the greedy binary XNOR cycle | Catalogue 6; Wang, Wong and Zhang give the greedy construction. Seek polynomial work and space per successor without storing visited windows. | Medium for conjecture discovery, lower for proof. Compare complete cycles and prove the last-edge tree condition. | Would turn apparent historical dependence into a bounded-memory rule. |
+| Ternary minimum discrepancy at order n ≥ 3 | Catalogue 15 states the broader conjecture; Álvarez et al. settled binary minimum discrepancy. Ask whether ternary minimum equals n for all n ≥ 3 under their discrepancy definition. | Lower. Verify proposed constructions on all cyclic intervals, then prove their discrepancy bounds. | Controls imbalance on time intervals rather than across window types. |
+
+I selected enumeration because three independent representations are available and because it can give a theorem for unbounded n. I excluded binary minimum discrepancy and the binary two-deletion identity as novelty targets. Searches covered balanced cut-down sequences, arbitrary-length analogs, cycle-length enumeration, near-Hamiltonian de Bruijn cycles, binary shift-register enumeration, and generalized de Bruijn words. The latter phrase covers several inequivalent definitions. The finite kernel below extends the same matrix-tree and exact-mixing method explicitly used for binary d=2 in the MathOverflow answer. Its mathematical contribution lies in the all-scale classification and the general fixed-deficit law.
+
+## Source register and priority assessment
+
+1. A. Nellore and R. Ward, *Arbitrary-Length Analogs to de Bruijn Sequences*, CPM 2022. Definition, existence, construction, and small counting data. The authors also distribute an enumeration script. [Paper](https://doi.org/10.4230/LIPIcs.CPM.2022.9) · [Code](https://github.com/nelloreward/pkl)
+2. *De Bruijn Sequences and Universal Cycle Constructions*, research-problems catalogue, especially items 6, 8, 10 and 15. Distinguishes open questions from several explicitly marked solved. [Catalogue](https://debruijnsequence.org/db/db/db/problems)
+3. Fredricksen, *A survey of full length nonlinear shift register cycle algorithms*, SIAM Review 24 (1982), §2c, and Timothy Chow's question with jvvk's subsequent solution. The posted answer corrects the quoted binary two-defect formula and explicitly uses the determinant lemma and exact mixing. This is the closest located proof. [Question and answer](https://mathoverflow.net/questions/227666/cycles-of-length-2n-2-in-the-de-bruijn-graph)
+4. *The enumeration of shift register sequences*, Journal of Combinatorial Theory A (1983). Studies distinct-window binary cycles by length; this condition alone generally permits uneven shorter-window counts. [Paper](https://www.sciencedirect.com/science/article/pii/0097316583900043)
+5. Álvarez, Becher, Mereb, Pajor and Soto, *De Bruijn Sequences with Minimum Discrepancy*. Settles the binary minimum-discrepancy question, an important exclusion when selecting candidates. [Paper](https://arxiv.org/abs/2407.17367)
+6. *Generalized De Bruijn Words, Invertible Necklaces, and the Burrows–Wheeler Transform*, MFCS 2025. Its permutation blocks describe a different class. A shared name or the appearance of permutations is insufficient to transfer its counting theorem. [Paper](https://drops.dagstuhl.de/storage/00lipics/lipics-vol345-mfcs2025/html/LIPIcs.MFCS.2025.48/LIPIcs.MFCS.2025.48.html)
+7. *Robust Positioning Patterns with Low Redundancy*. A competing recoverability direction imposing robustness to corrupted observations. Its objectives differ from exact counts of noiseless all-scale balanced records. [Paper](https://doi.org/10.1137/19M1253472)
+
+I found no statement of the general fixed-deficit limiting constant or residue-class polynomial law in the material located. The determinant tools are classical; absence of a search hit cannot establish priority. In particular, checking older shift-register literature for an equivalent generating function remains worthwhile. This is a finite-regime answer to an explicit enumerative problem and a link between short-memory overlap and temporal ambiguity. It establishes no one-way function or computational separation.
+
