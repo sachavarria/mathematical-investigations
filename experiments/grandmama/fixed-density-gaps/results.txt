@@ -1,0 +1,10 @@
+order 1, all threshold/density pairs: 4
+order 2, all threshold/density pairs: 12
+order 3, all threshold/density pairs: 32
+order 4, all threshold/density pairs: 80
+order 5, all threshold/density pairs: 192
+order 6, all threshold/density pairs: 448
+order 7, all threshold/density pairs: 1024
+order 8, all threshold/density pairs: 2304
+000 ambient and converse queries: (213, 252)
+Alternating interval witnesses checked for k=0..8
