@@ -1,0 +1,3 @@
+Explicit-alphabet, independent star and inherited-unique comparisons: 45
+Persistent ties checked through D=8 on the order-eight witness.
+Ordered monomial products separate both eight-bit witnesses.
