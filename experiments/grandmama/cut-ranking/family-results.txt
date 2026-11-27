@@ -1,0 +1,3 @@
+Direct fixed-density threshold checks: 1284
+Ambient two-return threshold checks: 10833
+General threshold checks via fixed-marker reduction: 254
