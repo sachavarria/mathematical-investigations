@@ -1,0 +1,5 @@
+Supplied-path (first unique,pure) comparisons: 881
+Whole-depth output comparisons: 255
+Global least-frequency vectors, including fixed density: 170
+Delay-embedding representative/threshold comparisons: 15424
+Shallow-theorem three-witness endpoint and overlap checks: 120
