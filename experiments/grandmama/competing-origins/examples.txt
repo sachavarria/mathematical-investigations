@@ -1,0 +1,12 @@
+Threshold 00000110110111 depth 3, maximum origins 1 (12386, 13821) seconds 0.001
+Threshold 00000110110111 depth 3, maximum origins 2 (12610, 12925) seconds 0.12
+Threshold 00000110110111 depth 3, maximum origins 3 (12666, 12715) seconds 0.222
+Threshold 00000110110111 depth 3, maximum origins 4 (12666, 12666) seconds 0.569
+Threshold 00000110110111 depth 3, maximum origins 5 (12666, 12666) seconds 1.131
+Unique least return at depth 1 12 000101110001 120 3660 seconds 0.138
+Unique least return at depth 1 16 0001011100010111 43760 58576 seconds 0.612
+Unique least return at depth 1 20 00010111000101110001 42040 934480 seconds 1.896
+Unique least return at depth 1 24 000101110001011100010111 11546088 14906208 seconds 5.447
+Integrated width 12 2 64 1562448 2067456 exact 1776984
+Integrated width 16 3 64 254631574 386252800 exact 316394880
+Integrated width 32 3 64 2630543901056599174 3203119048447492096 exact None
