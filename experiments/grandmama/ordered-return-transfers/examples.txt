@@ -1,0 +1,8 @@
+00000110110111 (1, [[11410, 23], [1064, 63], [98, 7]])
+11111111111111 (1, [[14658, 44], [1498, 77], [98, 7]])
+Direct orbit mass by stopping level, n = 8 [(0, 238), (1, 16)]
+Direct orbit mass by stopping level, n = 14 [(0, 14702), (1, 1575), (2, 105)]
+Direct orbit mass by stopping level, n = 18 [(0, 234092), (1, 25575), (2, 2340), (3, 135)]
+Direct orbit mass by stopping level, n = 20 [(0, 934604), (1, 102960), (2, 10200), (3, 790), (4, 20)]
+00101011 ['010', '10', '110'] [212, 154, 166] winning answer: False
+00101101 ['010', '110', '10'] [180, 150, 210] winning answer: True
