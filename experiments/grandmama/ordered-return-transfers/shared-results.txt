@@ -1,0 +1,4 @@
+All-histories ambient cut checks: 2193
+Converse single-query rank checks: 504
+Eight-bit opposite winning answers preserved at D=0,4,16,64.
+D=128; threshold length: 6240 mass: 22826141173056552129123168666523011624463020 ordinary rank queries: ['00011101'] seconds: 0.0023
