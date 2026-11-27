@@ -1,0 +1,3 @@
+Binary interval comparisons: 1606
+Matched-dictionary interval comparisons: 332
+Opposite-answer mixed-prefix witnesses: k=0..9
