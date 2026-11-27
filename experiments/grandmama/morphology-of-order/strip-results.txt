@@ -1,0 +1,16 @@
+n=1: 2 signatures; 2 aligned; 0 strict upper bounds
+n=2: 14 signatures; 12 aligned; 0 strict upper bounds
+n=3: 72 signatures; 48 aligned; 9 strict upper bounds
+n=4: 328 signatures; 178 aligned; 51 strict upper bounds
+n=5: 1400 signatures; 613 aligned; 260 strict upper bounds
+n=6: 5736 signatures; 2006 aligned; 1233 strict upper bounds
+n=7: 22848 signatures; 6320 aligned; 5725 strict upper bounds
+First strict relaxation: (((1, 0), (2, 0)), 1, 1, 0)
+((3, 1),) 0 (1, True)
+((3, 1),) 1 (2, False)
+((40, 20), (40, 20)) 0 (237520818846111947600, True)
+order 9, fixed path length 2 positive layouts, aligned, bound tight: (26, 7, 15)
+order 9, fixed path length 4 positive layouts, aligned, bound tight: (50, 28, 48)
+order 9, fixed path length 6 positive layouts, aligned, bound tight: (56, 36, 56)
+Bordered determinant identity: integer evaluations for every signature through n=4.
+Mixed overcount: gaps ((3,2),), twist 1, literal and relaxation: 1 2

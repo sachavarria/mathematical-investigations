@@ -1,0 +1,11 @@
+order 1: 6 cell/prefix checks, 2 primitive necklaces
+order 2: 21 cell/prefix checks, 1 primitive necklaces
+order 3: 90 cell/prefix checks, 2 primitive necklaces
+order 4: 279 cell/prefix checks, 3 primitive necklaces
+order 5: 1134 cell/prefix checks, 6 primitive necklaces
+order 6: 3429 cell/prefix checks, 9 primitive necklaces
+order 7: 3564 cell/prefix checks, 18 primitive necklaces
+order 8: 9396 cell/prefix checks, 30 primitive necklaces
+all-mixed cell, order 64: [('', 67108864), ('1', 67108864), ('11', 33554432), ('101', 16777216), ('10101', 5767168)]
+total: 17919 cell/prefix counts; 768 complete fixed-density primitive ranks
+two-occurrence lift versus direct signed tree polynomial: 175

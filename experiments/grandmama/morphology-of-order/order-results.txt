@@ -1,0 +1,6 @@
+n=4 windows=16 packets=6 lex-colex=1 lex-time=3 lex-bwt=3 colex-time=3 colex-bwt=3 time-bwt=5
+n=5 windows=32 packets=8 lex-colex=1 lex-time=3 lex-bwt=5 colex-time=3 colex-bwt=5 time-bwt=8
+n=6 windows=64 packets=14 lex-colex=1 lex-time=3 lex-bwt=3 colex-time=3 colex-bwt=3 time-bwt=20
+n=7 windows=128 packets=20 lex-colex=1 lex-time=3 lex-bwt=7 colex-time=3 colex-bwt=7 time-bwt=29
+n=8 windows=256 packets=36 lex-colex=1 lex-time=3 lex-bwt=5 colex-time=3 colex-bwt=5 time-bwt=62
+n=9 windows=512 packets=60 lex-colex=1 lex-time=3 lex-bwt=7 colex-time=3 colex-bwt=7 time-bwt=105

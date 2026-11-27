@@ -1,0 +1,6 @@
+Sorted-rotation oracle comparisons: 8291
+16 8 101 2 eligible columns 849 accepted 1 peak states 31
+32 16 101 2 eligible columns 14657 accepted 1 peak states 31
+64 32 101 2 eligible columns 247041 accepted 1 peak states 31
+64 32 101 3 eligible columns 24848641 accepted 451 peak states 210
+64 32 10110 2 eligible columns 247041 accepted 0 peak states 42
