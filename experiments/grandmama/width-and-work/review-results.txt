@@ -1,0 +1,3 @@
+n 7 cells 54 all cell/prefix pairs 13770 positive 142 zero 13628
+n 8 cells 81 all cell/prefix pairs 41391 positive 268 zero 41123
+formal bordered determinants 909 Leibniz permutations 91131

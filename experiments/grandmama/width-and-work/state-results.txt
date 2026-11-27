@@ -1,0 +1,13 @@
+Area, crossing bounds, and cycle parity: all 2046 binary columns through n=10
+n=12, z=6, scanned=6, scanned zeros=3. All completions have peak 3.
+reversed integer cut / residual classes / distinct row sums / accepted
+0 1 1 0
+2425 2 2 1
+2521 3 3 3
+2681 4 3 5
+2801 5 3 6
+3301 6 4 15
+3441 7 5 18
+3685 8 5 24
+3737 9 5 26
+4096 7 5 33

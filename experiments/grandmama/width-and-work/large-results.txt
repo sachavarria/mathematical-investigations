@@ -1,0 +1,3 @@
+cap 1 total mass 126 strictly below cut 2
+cap 2 total mass 34846 strictly below cut 1122
+cap 3 total mass 4767622 strictly below cut 279914

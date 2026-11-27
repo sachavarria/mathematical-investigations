@@ -1,0 +1,8 @@
+order 1 cumulative density/cap/threshold checks 6
+order 2 cumulative density/cap/threshold checks 26
+order 3 cumulative density/cap/threshold checks 80
+order 4 cumulative density/cap/threshold checks 233
+order 5 cumulative density/cap/threshold checks 629
+order 6 cumulative density/cap/threshold checks 1669
+order 7 cumulative density/cap/threshold checks 4249
+order 8 cumulative density/cap/threshold checks 10674
