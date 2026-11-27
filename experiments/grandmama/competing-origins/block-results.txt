@@ -1,0 +1,6 @@
+Least-return multiplicity slice comparisons: 1856
+cut 00000110110111 cell 0 accepted mass at least-return frequencies 1,2,3: [11410, 1050, 140]
+cut 00000110110111 cell 000 accepted mass at least-return frequencies 1,2,3: [9296, 91, 0]
+cut 00000110110111 cell 001 accepted mass at least-return frequencies 1,2,3: [2828, 161, 28]
+cut 00000110110111 cell 010 accepted mass at least-return frequencies 1,2,3: [196, 35, 14]
+cut 00000110110111 cell 011 accepted mass at least-return frequencies 1,2,3: [0, 0, 0]
