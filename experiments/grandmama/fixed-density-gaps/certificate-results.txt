@@ -1,0 +1,2 @@
+Dictionary intervals checked: 1056
+Small-minority exact fallback checks: 352
