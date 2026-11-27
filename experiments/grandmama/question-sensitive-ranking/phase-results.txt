@@ -1,0 +1,3 @@
+Full-clock cyclic interval checks: 1530
+Order 60, K = 100 (L,U,cells) (912617967272597757, 924090971908521996, 123) seconds 0.3131
+Order 60, K = 400 (L,U,cells) (916254474075616837, 919130380607148173, 477) seconds 2.1829
