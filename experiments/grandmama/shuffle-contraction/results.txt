@@ -1,0 +1,13 @@
+Unrestricted / fixed-zero rank comparisons: 260 1846
+Individual pinned layouts checked, including impossible layouts: 1487
+Probe blocks, order, contracted edges, distinct histories: 1 44 14 2
+Probe blocks, order, contracted edges, distinct histories: 2 92 36 4
+Probe blocks, order, contracted edges, distinct histories: 3 156 66 8
+Probe blocks, order, contracted edges, distinct histories: 4 200 88 16
+Probe blocks, order, contracted edges, distinct histories: 5 244 110 32
+Probe blocks, order, contracted edges, distinct histories: 6 340 156 64
+Probe blocks, order, contracted edges, distinct histories: 7 392 182 128
+Probe blocks, order, contracted edges, distinct histories: 8 444 208 256
+Probe blocks, order, contracted edges, distinct histories: 9 496 234 512
+00101011 BWT 10111000 LF [4, 0, 5, 6, 7, 1, 2, 3] strict answer at 00011101 False
+00101101 BWT 11010100 LF [4, 5, 0, 6, 1, 7, 2, 3] strict answer at 00011101 True
