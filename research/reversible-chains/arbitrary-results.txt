@@ -1,0 +1,7 @@
+All masked rules 2/4, all cut subsets, m<=8, times 0..P4(m)-1: 6068
+mask 2 m=129, t=63 first half 2
+mask 2 m=129, t=63 all even 18446744073709551616
+mask 2 m=129, t=63 all odd 64
+mask 4 m=129, t=63 first half 2
+mask 4 m=129, t=63 all even 18446744073709551616
+mask 4 m=129, t=63 all odd 64

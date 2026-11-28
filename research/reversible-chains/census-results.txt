@@ -1,0 +1,4 @@
+n=6: 208 rule/time rows, 3744 exact cut profiles
+n=8: 272 rule/time rows, 4896 exact cut profiles
+n=10: 336 rule/time rows, 6048 exact cut profiles
+n=12: 400 rule/time rows, 7200 exact cut profiles

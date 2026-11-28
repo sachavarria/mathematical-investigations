@@ -1,0 +1,3 @@
+Cell evolution comparisons: 42240
+Residual class multiplicity histograms: 6144
+Nine-cell landmark: 32 even first, 5 odd first. Eight-cell change check: 2 versus 16.

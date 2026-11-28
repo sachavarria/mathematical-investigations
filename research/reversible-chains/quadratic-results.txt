@@ -1,0 +1,4 @@
+Exact one-step cut widths vs literal rows: 21824
+n 6 odd-site parity, even-first state counts (mask order 0..15): [1, 8, 4, 2, 8, 1, 2, 4, 4, 2, 1, 8, 2, 4, 8, 1]
+n 24 odd-site parity, even-first state counts (mask order 0..15): [1, 4096, 2048, 2, 4096, 1, 2, 2048, 2048, 2, 1, 4096, 2, 2048, 4096, 1]
+n 96 odd-site parity, even-first state counts (mask order 0..15): [1, 281474976710656, 140737488355328, 2, 281474976710656, 1, 2, 140737488355328, 140737488355328, 2, 1, 281474976710656, 2, 140737488355328, 281474976710656, 1]
