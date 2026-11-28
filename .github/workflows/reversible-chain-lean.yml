@@ -17,4 +17,4 @@ jobs:
           tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
       - name: Check all proofs and print their axiom dependencies
         working-directory: research/reversible-chains/lean
-        run: '"$RUNNER_TEMP/lean-4.19.0-linux/bin/lean" --wfail Observer.lean'
+        run: '"$RUNNER_TEMP/lean-4.19.0-linux/bin/lean" -DwarningAsError=true Observer.lean'
