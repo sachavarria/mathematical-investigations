@@ -1,0 +1,20 @@
+name: Check reversible-chain observer proof
+on:
+  push:
+    paths:
+      - 'research/reversible-chains/lean/**'
+      - '.github/workflows/reversible-chain-lean.yml'
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Lean distribution
+        run: |
+          curl --fail --location --silent --show-error https://github.com/leanprover/lean4/releases/download/v4.19.0/lean-4.19.0-linux.tar.zst -o "$RUNNER_TEMP/lean.tar.zst"
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+      - name: Check all proofs and print their axiom dependencies
+        working-directory: research/reversible-chains/lean
+        run: '"$RUNNER_TEMP/lean-4.19.0-linux/bin/lean" --wfail Observer.lean'
